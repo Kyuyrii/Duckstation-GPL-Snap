@@ -1,0 +1,1 @@
+# Duckstation-GPL-Snap
