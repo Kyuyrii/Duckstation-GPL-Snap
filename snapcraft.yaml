@@ -97,6 +97,11 @@ plugs:
     default-provider: mesa-2404
   shared-memory:
     private: true
+  kvantum:
+    content: kvantum
+    interface: content
+    target: $SNAP/kvantum
+    default-provider: qt-style-kvantum
 
 parts:
   duckstation-gpl:
