@@ -7,9 +7,10 @@ platforms:
     build-for: [amd64]
 summary: PlayStation Emulator
 description: |
-  DuckStation is an simulator/emulator of the Sony PlayStation(TM) console, focusing on playability, speed, and long-term maintainability. The goal is to be as accurate as possible while maintaining performance suitable for low-end devices.
-
-  "PlayStation" and "PSX" are registered trademarks of Sony Interactive Entertainment Europe Limited. This project is not affiliated in any way with Sony Interactive Entertainment.
+  DuckStation is an simulator/emulator of the Sony PlayStation(TM) console, focusing on playability, speed, and long-term maintainability.
+  The goal is to be as accurate as possible while maintaining performance suitable for low-end devices.
+  "PlayStation" and "PSX" are registered trademarks of Sony Interactive Entertainment Europe Limited.
+  This project is not affiliated in any way with Sony Interactive Entertainment.
 grade: stable
 confinement: strict
 icon: org.duckstation.DuckStation.png
@@ -61,7 +62,7 @@ parts:
       chmod +x DuckStation-x64.AppImage
       ./DuckStation-x64.AppImage --appimage-extract
       mv -f squashfs-root/usr $CRAFT_PART_INSTALL/
-      sed -i 's|Name=DuckStation|Name=DuckStation GPL [NyKyu]|' $CRAFT_PART_INSTALL/usr/share/applications/org.duckstation.DuckStation.desktop
+      sed -i 's|Name=DuckStation|Name=DuckStation GPL [Kyu]|' $CRAFT_PART_INSTALL/usr/share/applications/org.duckstation.DuckStation.desktop
     prime:
       - usr/bin
       - usr/share/applications/org.duckstation.DuckStation.desktop
