@@ -23,8 +23,6 @@ apps:
     common-id: org.duckstation.DuckStation
     environment:
       QT_QPA_PLATFORMTHEME: xdgdesktopportal
-      LD_LIBRARY_PATH: $SNAP/lxqt-support-core24/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$LD_LIBRARY_PATH
-      QT_PLUGIN_PATH: $SNAP/lxqt-support-core24/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/qt6/plugins:$QT_PLUGIN_PATH
     extensions: [kde-neon-6]
     plugs:
       - screen-inhibit-control
@@ -38,19 +36,10 @@ apps:
 layout:
   /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/alsa-lib:
     symlink: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/alsa-lib
-  /usr/share/color-schemes:
-    symlink: $SNAP/lxqt-support-core24/usr/share/color-schemes
-  /usr/share/Kvantum:
-    symlink: $SNAP/lxqt-support-core24/usr/share/Kvantum
 
 plugs:
   shared-memory:
     private: true
-  lxqt-support-core24:
-    content: lxqt-support-core24
-    interface: content
-    target: $SNAP/lxqt-support-core24
-    default-provider: lxqt-support-core24
 
 parts:
   duckstation-gpl-app:
@@ -73,6 +62,7 @@ parts:
       - usr/lib/libpng16.so*
       - usr/lib/libjpeg.so*
       - usr/lib/libSDL2-2.0.so*
+      - usr/lib/libcurl.so*
 
   command-chain:
     after: [duckstation-gpl-app]
