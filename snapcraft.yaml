@@ -63,6 +63,7 @@ parts:
       - usr/lib/libjpeg.so*
       - usr/lib/libSDL2-2.0.so*
       - usr/lib/libcurl.so*
+      - usr/lib/libldap-2.5.so*
 
   command-chain:
     after: [duckstation-gpl-app]
